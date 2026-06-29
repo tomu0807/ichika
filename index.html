@@ -60,3 +60,316 @@
 
   
     </div></div>
+
+    /* アプリ全体の枠 */
+.app-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* ヘッダー全体を横並びのレイアウトにする */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid #cb1b1f; /* 👈 カラー変更：ガストレッドに */
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 35px;
+}
+
+.motto {
+    margin: 5px 0 0 0;
+    font-size: 20px;
+    color: #494949;
+}
+
+/* 🧭 右上の目次（ナビゲーション）を横並びにする設定 */
+#side {
+    margin: 0;
+}
+
+#mokuji h2 {
+    display: none; /* 「目次」という見出しは不要になるので隠します */
+}
+
+#mokuji ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 12px; /* メニュー同士の間隔 */
+}
+
+#mokuji li a {
+    text-decoration: none;
+    color: #cb1b1f; /* 👈 カラー変更：文字を赤に */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+/* マウスを乗せたときと、今開いているページの見た目 */
+#mokuji li a:hover, #mokuji li a.active {
+    background-color: #ffeb3b; /* 👈 カラー変更：ガストイエローに */
+    color: #cb1b1f;
+}
+
+/* 📱 メインエリアが横いっぱいに広がるように調整 */
+#main {
+    width: 100%;
+}
+
+/* 📢 ガストのタイトルの文字を大きく、太くする（サイズは最初の26pxのまま！） */
+#main h2 {
+    font-size: 26px;       /* 👈 最初と完全に同じサイズ */
+    font-weight: bold;     /* 文字を太字にする */
+    color: #cb1b1f;       /* 👈 カラー変更：ガストレッドに */
+    margin-top: 10px;      /* 上の目次とのすき間を微調整 */
+    margin-bottom: 15px;   /* 下のアプリ枠とのすき間を微調整 */
+}
+
+/* 予算設定エリア */
+.budget-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.budget-section input {
+    flex: 1;
+    padding: 6px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.budget-section button {
+    padding: 6px 12px;
+    background-color: #cb1b1f; /* 👈 カラー変更：ガストレッドに */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ステータス表示 */
+.status-section {
+    background: #fffde7; /* 👈 カラー変更：マイルドなガスト黄色に */
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #ffeb3b; /* 👈 カラー変更：黄色の枠線に */
+}
+
+/* プログレスバーの枠 */
+.progress-bar-container {
+    background: #eee;
+    border-radius: 10px;
+    height: 16px;
+    width: 100%;
+    overflow: hidden;
+    margin: 8px 0;
+}
+/* プログレスバーの中身 */
+.progress-bar {
+    background: #cb1b1f; /* 👈 カラー変更：メーターの色をガストレッドに */
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s;
+}
+
+/* 注文履歴 & おすすめの横並び */
+.result-flex {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.result-box {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 12px;
+    min-height: 100px;
+    background: #fff;
+}
+.result-box h3 {
+    margin: 0 0 5px 0;
+    font-size: 13px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 3px;
+    color: #cb1b1f; /* 👈 カラー変更：見出しを赤に */
+}
+#order-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* メニュー一覧のグリッド（2列） */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+.menu-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 8px;
+    text-align: center;
+    background: #fff;
+    cursor: pointer;
+    font-size: 13px;
+}
+/* 注文履歴のリスト項目を横並びにしてボタンを右端に寄せる */
+#order-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+/* ❌消去ボタンのデザイン */
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+.delete-btn:hover {
+    background-color: #ffe0e0; /* ホバー時に薄い赤にする */
+}
+
+// ガストのメニューデータ
+    const menuData = [
+        { name: "チーズINハンバーグ", price: 800, calories: 750 },
+        { name: "マヨコーンピザ", price: 500, calories: 680 },
+        { name: "から好しから揚げ(1個)", price: 150, calories: 120 },
+        { name: "山盛りポテトフライ", price: 450, calories: 420 },
+        { name: "セットドリンクバー", price: 300, calories: 50 },
+        { name: "ライス", price: 200, calories: 300 }
+    ];
+
+    let budget = 1000;
+    let currentPrice = 0;
+    let currentCalories = 0;
+
+    // 画面が読み込まれた時の初期設定
+    document.addEventListener('DOMContentLoaded', () => {
+        initMenu();
+        document.getElementById('budget-btn').addEventListener('click', setBudget);
+    });
+
+    // メニューボタンを作る
+    function initMenu() {
+        const grid = document.getElementById('menu-grid');
+        menuData.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'menu-item';
+            div.addEventListener('click', () => addToOrder(item));
+            div.innerHTML = `
+                <div class="menu-name">${item.name}</div>
+                <div class="menu-info">¥${item.price} / ${item.calories}kcal</div>
+            `;
+            grid.appendChild(div);
+        });
+        updateUI();
+    }
+
+    // 予算をセットする
+    function setBudget() {
+        const input = document.getElementById('budget-input').value;
+        budget = parseInt(input) || 0;
+        document.getElementById('current-budget').innerText = budget;
+        updateUI();
+    }
+
+    // 左側の「現在注文したもの」に価格とカロリーを表示
+    function addToOrder(item) {
+        currentPrice += item.price;
+        currentCalories += item.calories;
+
+        const list = document.getElementById('order-list');
+        const li = document.createElement('li');
+        li.innerText = `${item.name} (¥${item.price} / ${item.calories}kcal)`;
+        list.appendChild(li);
+
+        updateUI();
+    }
+
+    // 画面のメーターや数値を更新
+    function updateUI() {
+        document.getElementById('total-price').innerText = currentPrice;
+        document.getElementById('total-calories').innerText = currentCalories;
+
+        const remaining = budget - currentPrice;
+        const remainingText = document.getElementById('remaining-money');
+        
+        if (remaining >= 0) {
+            remainingText.innerText = `あと ${remaining} 円`;
+            remainingText.style.color = '#333';
+        } else {
+            remainingText.innerText = `予算オーバー！ (${Math.abs(remaining)}円超過)`;
+            remainingText.style.color = '#ff4757';
+        }
+
+        const percent = Math.min((currentPrice / budget) * 100, 100);
+        const bar = document.getElementById('progress-bar');
+        bar.style.width = `${percent}%`;
+        
+        if (currentPrice > budget) {
+            bar.style.backgroundColor = '#ff4757';
+        } else {
+            bar.style.backgroundColor = '#2ed573';
+        }
+
+        updateRecommendation(remaining);
+    }
+
+    // 【修正完了】右側のおすすめ商品も、改行せずに1行で隣に並べる
+    function updateRecommendation(remaining) {
+        const recommendBox = document.getElementById('recommend-item');
+        if (remaining <= 0) {
+            recommendBox.innerText = "予算いっぱい！";
+            return;
+        }
+
+        let bestMatch = null;
+        let minDiff = remaining;
+
+        menuData.forEach(item => {
+            if (item.price <= remaining) {
+                const diff = remaining - item.price;
+                if (diff < minDiff) {
+                    minDiff = diff;
+                    bestMatch = item;
+                }
+            }
+        });
+
+        if (bestMatch) {
+            if (minDiff === 0) {
+                // 📄 【ぴったり】ライス (¥200 / 300kcal) と1行で並びます
+                recommendBox.innerHTML = `<strong>【ぴったり！】</strong><br>${bestMatch.name} (¥${bestMatch.price} / ${bestMatch.calories}kcal)`;
+            } else {
+                // 📄 【おすすめ】ライス (¥200 / 300kcal) と1行で並び、下にあと何円か出します
+                recommendBox.innerHTML = `【おすすめ】<br>${bestMatch.name} (¥${bestMatch.price} / ${bestMatch.calories}kcal)<br><span style="color:#666; font-size:11px;">あと ${minDiff}円！</span>`;
+            }
+        } else {
+            recommendBox.innerText = "予算に合うメニューがありません";
+        }
+    }
